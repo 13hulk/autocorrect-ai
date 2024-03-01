@@ -1,5 +1,9 @@
-import asyncio
+# import asyncio
+#
+# from autocorrect_ai import create_app
+#
+# app = asyncio.run(create_app(service="autocorrect-ai", testing=False))
 
-from autocorrect_ai import create_app
+from fastapi import FastAPI
 
-app = asyncio.run(create_app(service="autocorrect-ai", testing=False))
+app = FastAPI()
