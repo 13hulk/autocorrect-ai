@@ -1,5 +1,6 @@
 from pynput.keyboard import Controller
 
+from autocorrect_ai.ai import LLM
 from autocorrect_ai.clipboard import ClipboardExchange
 from .shortcuts import KeyboardShortcuts
 
@@ -12,7 +13,8 @@ class KeyboardController(Controller):
 
     @staticmethod
     def modify_text(text: str):
-        return text.upper()
+        text = LLM.generate(text)
+        return text
 
     def fix_selection(self):
         self.shortcuts.cut()
