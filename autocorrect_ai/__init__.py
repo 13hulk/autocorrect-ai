@@ -1,15 +1,18 @@
-from fastapi import FastAPI
+def create_app():
+    init_modules()
 
 
-async def create_app(service: str, testing: bool = False) -> FastAPI:
-    app = FastAPI()
+def init_modules():
+    from autocorrect_ai.clipboard import init_clipboard
+    from autocorrect_ai.keyboard import init_shortcuts, init_controller, init_listener
 
-    await register_routers(app)
+    init_clipboard()
+    init_shortcuts()
+    init_controller()
+    init_listener()
 
-    return app
 
+def start_listener():
+    from autocorrect_ai.keyboard import LISTENER
 
-async def register_routers(app: FastAPI):
-    from autocorrect_ai.api import health_router
-
-    app.include_router(health_router)
+    LISTENER.run()
