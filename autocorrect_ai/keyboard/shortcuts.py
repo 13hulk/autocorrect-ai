@@ -2,6 +2,9 @@ from pynput.keyboard import Controller, Key
 
 
 class KeyboardShortcuts(Controller):
+    def __init__(self):
+        super().__init__()
+
     def cut(self):
         # Copy: <cmd> + x
         with self.pressed(Key.cmd):
