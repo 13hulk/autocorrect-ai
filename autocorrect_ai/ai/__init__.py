@@ -1,4 +1,5 @@
-from core.proxy import ProxyObject, Sentinel
+from kit.proxy import ProxyObject, Sentinel
+
 from .llm import Llm
 from .ollama import OllamaConfig, OllamaModel
 from .templates import Templates

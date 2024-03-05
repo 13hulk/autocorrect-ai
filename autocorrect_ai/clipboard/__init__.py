@@ -1,4 +1,5 @@
-from core.proxy import ProxyObject, Sentinel
+from kit.proxy import ProxyObject, Sentinel
+
 from .exchange import ClipboardExchange
 
 __all__ = ["CLIPBOARD", "ClipboardExchange", "init_clipboard"]

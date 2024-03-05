@@ -1,4 +1,5 @@
-from core.proxy import ProxyObject, Sentinel
+from kit.proxy import ProxyObject, Sentinel
+
 from .controller import KeyboardController
 from .listener import HotkeyListener
 from .shortcuts import KeyboardShortcuts
