@@ -4,6 +4,9 @@ import pyperclip
 
 
 class ClipboardExchange:
+    def __init__(self):
+        pass
+
     @staticmethod
     def fetch() -> str:
         time.sleep(0.1)
