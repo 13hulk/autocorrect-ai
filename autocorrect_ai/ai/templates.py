@@ -3,9 +3,9 @@ from string import Template
 
 class Templates:
     PROMPT_TEMPLATE_FIX_TEXT = Template(
-        """Fix all typos and casing and punctuation in this text, but preserve all new line characters:
+        """Fix all typos, casing, punctuation and grammar in this text, but preserve all new line characters:
 
-    $text
+    "$text"
 
     Return only the corrected text."""
     )
