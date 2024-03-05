@@ -8,13 +8,29 @@ def init_modules():
     from autocorrect_ai.clipboard import init_clipboard
     from autocorrect_ai.keyboard import init_controller, init_listener, init_shortcuts
 
+    # Instrumentation
+    # 1. Logger
     init_logger()
-    init_clipboard()
-    init_shortcuts()
-    init_controller()
-    init_listener()
-    init_templates()
+
+    # AI engine
+    # 2. Language model
     init_llm()
+
+    # 3. Templates
+    init_templates()
+
+    # Modules
+    # 4. Clipboard
+    init_clipboard()
+
+    # 5. Keyboard shortcuts
+    init_shortcuts()
+
+    # 6. Keyboard controller
+    init_controller()
+
+    # 7. Keyboard listener
+    init_listener()
 
 
 def start_listener():
