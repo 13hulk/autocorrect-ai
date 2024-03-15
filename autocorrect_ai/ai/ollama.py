@@ -34,17 +34,21 @@ class OllamaModel(Llm):
         )
         if response.status_code != 200:
             print("Error", response.status_code)
-            return None
+            return ""
 
         return self.sanitize(response.json()["response"])
 
     def sanitize(self, text: str) -> str:
-        text = text.strip()
+        # Strip leading and trailing quotes
+        text = self.strip_quotes(text)
 
-        if text[0] in ('"', "'"):
-            text = text[1:]
+        return text.strip()
 
-        if text[-1] in ('"', "'"):
-            text = text[:-1]
-
-        return text
+    @staticmethod
+    def strip_quotes(text: str) -> str:
+        """
+        Remove leading and trailing quotes from the text
+        :param text:
+        :return:
+        """
+        return text.strip().strip("'\"")
